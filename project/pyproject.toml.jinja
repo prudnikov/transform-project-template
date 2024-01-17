@@ -8,7 +8,7 @@ description = "{{ project_description }}"
 authors = [
     {name = "{{ author_fullname }}", email = "{{ author_email }}"}
 ]
-license = {text = "{{ copyright_license }}"}
+license = {text = "MIT"}
 readme = "README.md"
 requires-python = "{{ python_package_requires_python }}"
 dependencies = []
@@ -37,16 +37,9 @@ dev = [
     "towncrier>=19.2",
     "parver>=0.3",
 ]
-{% if build_doc %}
-doc = [
-    "mkdocs>=1.1",
-    "mkdocs-material>=6.2",
-]
-{% endif %}
 [tool.pdm.scripts]
 release = "python -m tasks.release"
 test = "pytest tests/"
-{% if build_doc %}doc = {shell = "cd docs && mkdocs serve", help = "Start the dev server for doc preview"}{% endif %}
 lint = "pre-commit run --all-files"
 
 [tool.black]
