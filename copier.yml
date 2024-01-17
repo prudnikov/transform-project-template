@@ -17,17 +17,7 @@ owning_team:
     - Mages
     - Myrmidons
 
-python_package_distribution_name:
-  type: str
-  help: Your Python package distribution name (for `pip install NAME`)
-  default: "{{ project_name|lower|replace('_', '-')|replace(' ', '-') }}"
-
 python_package_import_name:
   type: str
   help: Your Python package import name (for `import NAME` in Python code)
   default: "{{ project_name|lower|replace('-', '_')|replace(' ', '_') }}"
-
-python_package_requires_python:
-  type: str
-  help: The python version range your project supports
-  default: ">=3.11,<3.12"

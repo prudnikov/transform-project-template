@@ -3,14 +3,14 @@ requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 [project]
-name = "{{ python_package_distribution_name }}"
+name = "{{ project_name|lower|replace('_', '-')|replace(' ', '-') }}"
 description = "Description"
 authors = [
     {name = "Paylocity Data Engineering", email = "de@paylocity.com"}
 ]
 license = {text = "MIT"}
 readme = "README.md"
-requires-python = "{{ python_package_requires_python }}"
+requires-python = "==3.11.*"
 dependencies = [
     "apache-airflow-providers-snowflake==5.0.1",
     "apache-airflow==2.7.2",
