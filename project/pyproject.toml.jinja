@@ -4,9 +4,9 @@ build-backend = "pdm.backend"
 
 [project]
 name = "{{ python_package_distribution_name }}"
-description = "{{ project_description }}"
+description = "Description"
 authors = [
-    {name = "{{ author_fullname }}", email = "{{ author_email }}"}
+    {name = "Paylocity Data Engineering", email = "de@paylocity.com"}
 ]
 license = {text = "MIT"}
 readme = "README.md"
@@ -20,8 +20,8 @@ classifiers = [
 ]
 
 [project.urls]
-Repository = "https://github.com/{{ repository_namespace }}/{{ repository_name }}"
-Homepage = "https://github.com/{{ repository_namespace }}/{{ repository_name }}"
+Repository = "https://github.com/Paylocity/de-transformer"
+Homepage = "https://github.com/Paylocity/de-transformer"
 
 [tool.pdm.version]
 source = "scm"
@@ -78,46 +78,6 @@ disallow_untyped_decorators = true
 namespace_packages = true
 mypy_path = "src"
 explicit_package_bases = true
-
-[tool.towncrier]
-package = "{{python_package_import_name}}"
-filename = "CHANGELOG.md"
-issue_format = "{{'[#{issue}]'}}(https://github.com/{{ repository_namespace }}/{{ repository_name }}/issues/{issue})"
-directory = "news/"
-start_string = "<!-- insertion marker -->"
-title_format = "[v{version}](https://github.com/{{ repository_namespace }}/{{ repository_name }}/releases/tag/{version}) ({project_date})"
-template = "news/towncrier_template.md"
-underlines = "-~^"
-
-[[tool.towncrier.type]]
-directory = "feature"
-name = "Features & Improvements"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "bugfix"
-name = "Bug Fixes"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "doc"
-name = "Improved Documentation"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "dep"
-name = "Dependencies"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "removal"
-name = "Removals and Deprecations"
-showcontent = true
-
-[[tool.towncrier.type]]
-directory = "misc"
-name = "Miscellany"
-showcontent = true
 
 [tool.isort]
 profile = "black"

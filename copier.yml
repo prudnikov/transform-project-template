@@ -9,32 +9,6 @@ project_name:
   type: str
   help: Your project name
 
-project_description:
-  type: str
-  help: Your project description
-
-author_fullname:
-  type: str
-  help: Your full name
-
-author_email:
-  type: str
-  help: Your email
-
-author_username:
-  type: str
-  help: Your username (e.g. on GitHub)
-
-repository_namespace:
-  type: str
-  help: Your repository namespace
-  default: "{{ author_username }}"
-
-repository_name:
-  type: str
-  help: Your repository name
-  default: "{{ project_name|lower|replace('_', '-')|replace(' ', '-') }}"
-
 owning_team:
   type: str
   help: Owning team
